@@ -11,8 +11,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root "products#index"
 
-  #begin CRUD edits
+  # rails application
   get "/products", to: "products#index"
 
   get "/products/new", to: "products#new"
@@ -25,8 +26,12 @@ Rails.application.routes.draw do
   put "/products/:id", to: "products#update"
   
   delete "/products/:id", to: "products#destroy"
-  
+
+  ## is the same as saying:
+  # resources :products
+  ## which creates all of the above CRUD operations
 
 
-  
+
+
 end
